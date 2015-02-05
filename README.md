@@ -10,3 +10,4 @@
 
 - [Customer Requirement](https://github.com/SSD2015/TeamJDED/wiki/Customer-Requirement)
 - [Framework Review](https://github.com/SSD2015/TeamJDED/wiki/Frameworks-review)
+- [Use Cases](https://github.com/SSD2015/TeamJDED/wiki/Use-Cases)
