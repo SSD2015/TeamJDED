@@ -13,3 +13,4 @@
 - [Use Cases](https://github.com/SSD2015/TeamJDED/wiki/Use-Cases)
 - [FURPS](https://github.com/SSD2015/TeamJDED/wiki/Functional-Requirements)
 - [Vision Statement](https://github.com/SSD2015/TeamJDED/wiki/Vision-Statement)
+- [Mock-up](https://github.com/SSD2015/TeamJDED/wiki/Mock-up)
