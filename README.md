@@ -12,3 +12,4 @@
 - [Framework Review](https://docs.google.com/document/d/13P9dqHVBfVKma0K9mpGQ1tGRtaPBZ_dQ7YbqA7IzUnE/edit)
 - [Use Cases](https://github.com/SSD2015/TeamJDED/wiki/Use-Cases)
 - [FURPS](https://github.com/SSD2015/TeamJDED/wiki/Functional-Requirements)
+- [Vision Statement](https://github.com/SSD2015/TeamJDED/wiki/Vision-Statement)
