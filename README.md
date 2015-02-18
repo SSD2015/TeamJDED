@@ -14,3 +14,4 @@
 - [FURPS](https://github.com/SSD2015/TeamJDED/wiki/Functional-Requirements)
 - [Vision Statement](https://github.com/SSD2015/TeamJDED/wiki/Vision-Statement)
 - [Mock-up](https://github.com/SSD2015/TeamJDED/wiki/Mock-up)
+- [Domain Model](https://docs.google.com/drawings/d/13cPB0xySrY8Kxcp-dkCLW44pAYtcjuOXt2qmO7S_8Ck/edit?usp=sharing)
