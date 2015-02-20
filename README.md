@@ -15,4 +15,4 @@
 - [Vision Statement](https://github.com/SSD2015/TeamJDED/wiki/Vision-Statement)/ [Vision and Scope v2](https://docs.google.com/document/d/1H4dxnSiHYRdODp2fDIgbwF3reayN4U7ffhz7gHUEovA/edit#heading=h.3dy6vkm)
 - [Mock-up](https://github.com/SSD2015/TeamJDED/wiki/Mock-up)
 - [Domain Model](https://docs.google.com/drawings/d/13cPB0xySrY8Kxcp-dkCLW44pAYtcjuOXt2qmO7S_8Ck/edit?usp=sharing)
-- [Iteration Plan](https://docs.google.com/document/d/1Ic12o4wjuGsLlyWIeeOI2a8utNyNxKL-D6OLhX1nJpc/edit#)
+- [Iteration Plan](https://docs.google.com/document/d/1Ic12o4wjuGsLlyWIeeOI2a8utNyNxKL-D6OLhX1nJpc/edit#)  **Iteration Plan must be HERE, not in Google Docs**
