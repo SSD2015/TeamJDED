@@ -29,3 +29,6 @@
 
 | Milestone | Description |
 | --------- |:----------- |
+| User can vote | User can make a vote for project |
+| View summary page | User can view summary of score |
+| Edit vote | User can edit a vote |
