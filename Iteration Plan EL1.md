@@ -25,7 +25,7 @@
 | Coding | Supayut, Waranyu |
 | Update on github | Nachanok |
 
-# Milestine
+# Milestone
 
 | Milestone | Description |
 | --------- |:----------- |
