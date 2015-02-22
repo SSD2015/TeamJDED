@@ -19,10 +19,12 @@
 | Review Mock-up | Team |
 | Review Domain Model | Team |
 | Install framework | Team |
-| Interface Design UI | Wasin, Akarawit |
-| Sequence, UML | Wasin, Akarawit, Nachanok |
-| Planing to code | Supayut, Waranyu |
-| Coding | Supayut, Waranyu |
+| Interface Coding UI | Wasin, Akarawit, Nachanok |
+| Sequence, UML | Wasin, Akarawit |
+| Planing part of code | Supayut, Waranyu, Nachanok |
+| Coding vote system | Supayut, Waranyu, Nachanok |
+| Database and server | Supayut |
+| Model controller | Waranyu, Nachanok |
 | Update on github | Nachanok |
 
 # Milestone
