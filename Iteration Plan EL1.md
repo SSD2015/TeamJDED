@@ -19,9 +19,9 @@
 | Review Mock-up | Team |
 | Review Domain Model | Team |
 | Install framework | Team |
-| Interface Coding UI (index) | Nachanok |
+| Interface Coding UI (index) | Wasin |
 | Interface Coding UI (vote) | Akarawit |
-| Interface Coding UI (register) | Wasin |
+| Interface Coding UI (register) | Nachanok |
 | Interface Coding UI (summary) | Wasin |
 | Interface Coding UI (login) | Akarawit |
 | Sequence | Wasin |
