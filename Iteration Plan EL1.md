@@ -19,12 +19,17 @@
 | Review Mock-up | Team |
 | Review Domain Model | Team |
 | Install framework | Team |
-| Interface Coding UI | Wasin, Akarawit, Nachanok |
-| Sequence, UML | Wasin, Akarawit |
-| Planing part of code | Supayut, Waranyu, Nachanok |
-| Coding vote system | Supayut, Waranyu, Nachanok |
-| Database and server | Supayut |
-| Model controller | Waranyu, Nachanok |
+| Interface Coding UI (index) | Nachanok |
+| Interface Coding UI (vote) | Akarawit |
+| Interface Coding UI (register) | Wasin |
+| Interface Coding UI (summary) | Wasin |
+| Interface Coding UI (login) | Akarawit |
+| Sequence | Wasin |
+| UML | Akarawit |
+| Planing code Design Pattern | Team |
+| Coding vote system | Waranyu |
+| Management Database and server | Supayut |
+| Coding controller and model | Nachanok |
 | Update on github | Nachanok |
 
 # Milestone
