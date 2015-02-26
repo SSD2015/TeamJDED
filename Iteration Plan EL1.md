@@ -30,7 +30,7 @@
 | Coding vote system | Waranyu |
 | Management Database and server | Supayut |
 | Coding controller and model | Nachanok |
-| Update on github | Nachanok |
+| Update information on github | Nachanok |
 
 # Milestone
 
