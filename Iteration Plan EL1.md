@@ -29,7 +29,7 @@
 | Planing code Design Pattern | Team |
 | Coding vote system | Waranyu |
 | Management Database and server | Supayut |
-| Coding controller and model | Nachanok |
+| Assist coding controller and model | Nachanok |
 | Update information on github | Nachanok |
 
 # Milestone
