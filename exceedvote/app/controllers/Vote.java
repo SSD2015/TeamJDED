@@ -9,9 +9,9 @@ import models.voteModel;
 
 public class Vote extends Controller{
 	public static Result addVote() {
-        Vote vote = Form.form(Vote.class).bindFromRequest().get();
+        voteModel vote = Form.form(voteModel.class).bindFromRequest().get();
         vote.save();
-        return ok(Vote.render(Vote.find.all()));
+        return ok(Vote.render(voteModel.find.all()));
     }
 
 }
