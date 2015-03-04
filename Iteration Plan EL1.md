@@ -20,16 +20,15 @@
 | Review Domain Model | Team |
 | Install framework | Team |
 | Interface Coding UI (index) | Wasin |
-| Interface Coding UI (vote) | Akarawit |
-| Interface Coding UI (register) | Nachanok |
+| Interface Coding UI (vote) | Waranyu |
+| Interface Coding UI (register) | Akarawit |
 | Interface Coding UI (summary) | Wasin |
 | Interface Coding UI (login) | Akarawit |
 | Sequence | Wasin |
 | UML | Akarawit |
 | Planing code Design Pattern | Team |
-| Coding vote system | Waranyu |
 | Management Database and server | Supayut |
-| Assist coding controller and model | Nachanok |
+| Coding controller and model | Nachanok |
 | Update information on github | Nachanok |
 
 # Milestone
