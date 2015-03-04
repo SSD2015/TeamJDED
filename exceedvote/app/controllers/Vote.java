@@ -1,13 +1,17 @@
 package controllers;
 
-import play.mvc.Controller;
+import play.data.Form;
 import play.mvc.*;
 
 import views.html.*;
 
+import models.voteModel;
+
 public class Vote extends Controller{
-	public static Result index(){
-		return ok(vote.render("Vote Page"));
-	}
+	public static Result addVote() {
+        Vote vote = Form.form(Vote.class).bindFromRequest().get();
+        vote.save();
+        return ok(Vote.render(Vote.find.all()));
+    }
 
 }

@@ -12,3 +12,7 @@ GET     /                           controllers.Application.index()
 
 #Vote page
 GET		/vote							controllers.Vote.index()
+
+#AddAction
+POST		/addAction				controllers.Vote.addVote()
+GET			/addAction				controllers.Vote.index()
