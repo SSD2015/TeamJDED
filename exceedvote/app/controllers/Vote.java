@@ -9,4 +9,5 @@ public class Vote extends Controller{
 	public static Result index(){
 		return ok(vote.render("Vote Page"));
 	}
+
 }
