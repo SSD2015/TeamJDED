@@ -17,4 +17,4 @@
 - [Domain Model](https://docs.google.com/drawings/d/13cPB0xySrY8Kxcp-dkCLW44pAYtcjuOXt2qmO7S_8Ck/edit?usp=sharing)
 
 ## Installation
-See [Installation Guide]()
+See [Installation Guide](https://github.com/SSD2015/TeamJDED/wiki/InstallationGuide)
