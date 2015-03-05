@@ -11,4 +11,6 @@ GET     /                           controllers.Application.index()
 #Register page						
 
 #Vote page
-GET		/vote							controllers.Vote.index()
+GET		/vote						controllers.Vote.index()
+POST    /addAction      			controllers.Vote.voteItem()
+		
