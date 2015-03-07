@@ -2,14 +2,14 @@
 
 | Task | Assigned to |
 | ---- |:----------- |
-| Update requirement |-|
-| Update glossary|-|
-| Record vote|-|
-| UI vote page|-|
-| Model vote page|-|
-| Update domain model|-|
-| Update system|-|
-| Doccument install guide||
+| Update requirement |Wasin, Akarawit|
+| Update glossary|Wasin, Akarawit|
+| Record vote|Supayut, Waranyu|
+| UI vote page|Waranyu|
+| Model vote page|Supayut|
+| Update domain model|Nachanok|
+| Update system|Supayut, Nachanok|
+| Doccument install guide|Wasin, Akarawit|
 
 # Milestone
 
