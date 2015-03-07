@@ -1,3 +1,18 @@
+# Planned Tasks
+| Objective | Priority (1= High, 3= Low) |
+| --------- |:-------------------------- |
+| Diagram(UML)| 3 |
+| Diagram(Sequence)| 3 |
+| Update Diagram(Domain model)| 3 |
+| Edit document following feedback | 2 |
+| Update system(page connection) | 2 |
+| Update system(return to home page) | 1 |
+| Finish model | 1 |
+| Finish Team Detail page UI | 2 |
+| Finish Summary score page UI | 2 |
+| Complete UC 1 - 3 | 1 |
+| Everything on github | 1 |
+  
 # Task
 
 | Task | Assigned to |
