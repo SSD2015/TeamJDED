@@ -22,7 +22,7 @@
 | Edit Domain Model(Requirement change) | Team |
 | Installation guide | Supayut, Nachanok |
 | Interface Coding UI (summary score) | Warunyu |
-| Interface Coding UI (team detail) | Akarawit |
+| Interface Coding UI (team detail) | Warunyu |
 | Sequence diagram | Wasin |
 | UML diagram | Akarawit |
 | Planing code Design Pattern | Team |
