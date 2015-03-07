@@ -15,6 +15,6 @@
 
 | Milestone | Description |
 | --------- |:----------- |
-| Vote can record | system must record every vote by voter |
+| Vote can record | System must record every vote by voter |
 | View summary page | User can view summary of score |
 | Edit vote | User can edit a vote |
