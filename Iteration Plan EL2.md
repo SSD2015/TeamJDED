@@ -12,24 +12,28 @@
 | Finish Summary score page UI | 2 |
 | Complete UC 1 - 3 | 1 |
 | Everything on github | 1 |
-  
+
 # Task
 
 | Task | Assigned to |
 | ---- |:----------- |
-| Update requirement |Wasin, Akarawit|
-| Update glossary|Wasin, Akarawit|
-| Record vote|Supayut, Waranyu|
-| UI vote page|Waranyu|
-| Model vote page|Supayut|
-| Update domain model|Nachanok|
-| Update system|Supayut, Nachanok|
-| Doccument install guide|Wasin, Akarawit|
+| Edit use case(Requirement change) | Nachanok |
+| Edit topic name in wiki(Following feedback) | Nachanok |
+| Edit Domain Model(Requirement change) | Team |
+| Installation guide | Supayut, Nachanok |
+| Interface Coding UI (summary score) | Warunyu |
+| Interface Coding UI (team detail) | Akarawit |
+| Sequence diagram | Wasin |
+| UML diagram | Akarawit |
+| Planing code Design Pattern | Team |
+| Update system(Record vote statistic) | Supayut |
+| Coding controller and model | Nachanok, Supayut |
+| Update information on github(Glossary) | Nachanok |
+| Update information on github(EL.2 plan) | Nachanok |
 
 # Milestone
 
 | Milestone | Description |
 | --------- |:----------- |
-| Vote can record | System must record every vote by voter |
-| View summary page | User can view summary of score |
-| Edit vote | User can edit a vote |
+| Update system | User can make a vote for project |
+| Update document | User can view summary of score |
