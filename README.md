@@ -15,7 +15,7 @@
 - [Vision Statement](https://github.com/SSD2015/TeamJDED/wiki/Vision-Statement)/ [Vision and Scope v2](https://docs.google.com/document/d/1H4dxnSiHYRdODp2fDIgbwF3reayN4U7ffhz7gHUEovA/edit#heading=h.3dy6vkm)
 - [Mock-up](https://github.com/SSD2015/TeamJDED/wiki/Mock-up)
 - [Domain Model](https://docs.google.com/drawings/d/13cPB0xySrY8Kxcp-dkCLW44pAYtcjuOXt2qmO7S_8Ck/edit?usp=sharing)
-- [Glossary](https://github.com/SSD2015/TeamJDED/wiki/SRS_Glossary) [Blank]
+- [Glossary](https://github.com/SSD2015/TeamJDED/wiki/SRS_Glossary)
 
 ## Installation
 See [Installation Guide](https://github.com/SSD2015/TeamJDED/wiki/InstallationGuide)
