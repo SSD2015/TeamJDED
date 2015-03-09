@@ -4,9 +4,10 @@
 # --- !Ups
 
 create table vote_model (
-  id                        integer primary key AUTOINCREMENT,
+  id                        bigint auto_increment not null,
   score                     integer,
-  name                      varchar(255))
+  name                      varchar(255),
+  constraint pk_vote_model primary key (id))
 ;
 
 
@@ -14,9 +15,9 @@ create table vote_model (
 
 # --- !Downs
 
-PRAGMA foreign_keys = OFF;
+SET FOREIGN_KEY_CHECKS=0;
 
 drop table vote_model;
 
-PRAGMA foreign_keys = ON;
+SET FOREIGN_KEY_CHECKS=1;
 

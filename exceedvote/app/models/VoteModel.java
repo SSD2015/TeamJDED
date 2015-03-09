@@ -2,8 +2,6 @@ package models;
 
 import javax.persistence.*;
 
-import controllers.Vote;
-
 import play.db.ebean.Model;
 
 @Entity
