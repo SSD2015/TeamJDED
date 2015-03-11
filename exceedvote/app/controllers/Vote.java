@@ -5,8 +5,6 @@ import play.data.Form;
 import play.mvc.*;
 import views.html.*;
 
-import models.VoteModel;
-
 public class Vote extends Controller{
 
 	public static Result index(){
