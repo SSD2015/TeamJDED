@@ -15,3 +15,6 @@ GET     /                           controllers.Application.index()
 GET		/vote						controllers.Vote.index()
 POST    /addAction      			controllers.Vote.voteItem()
 
+#Summary page
+
+GET		/summaryscore				controllers.Summary.index()
