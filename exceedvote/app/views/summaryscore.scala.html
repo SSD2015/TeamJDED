@@ -1,4 +1,4 @@
-@(votes: List[VoteModel])
+@(votes: Map[String,Integer])
 
 @main("Summary Page || ExceedVote by JDED") {
 	
@@ -7,11 +7,9 @@
 	</div>
 	<div class="container">
 		<div id="ex0"></div>
-		@votes.map { vote =>
-    		@vote.name <br>
-    			
+		@for((key, value) <- votes){
+		  @key - @value <br>
 		}
-		
 	</div>
 
 	<script>
@@ -21,11 +19,11 @@
 	    function drawChart() {
 	
 	      var data = google.visualization.arrayToDataTable([
+	             
 			          ['Team','Score'],
-			          ['A', 5],
-			          ['B', 4],
-			          ['C', 6],
-			          ['D', 7]
+			        @for((key, value) <- votes){
+			    		  [	'@key', @value],
+					}
         			]);
 		
 	      var options = {
