@@ -1,0 +1,47 @@
+# --- Created by Ebean DDL
+# To stop Ebean DDL generation, remove this comment and start using Evolutions
+
+# --- !Ups
+
+<<<<<<< HEAD
+=======
+create table team_model (
+  id                        integer auto_increment not null,
+  teamname                  varchar(255),
+  teamdescription           varchar(255),
+  pic                       varchar(255),
+  constraint pk_team_model primary key (id))
+;
+
+>>>>>>> 118d408167647e11d872a39bc571d3e627ed8e22
+create table user_model (
+  id                        bigint auto_increment not null,
+  username                  varchar(255),
+  password                  varchar(255),
+  name                      varchar(255),
+  is_admin                  tinyint(1) default 0,
+  constraint pk_user_model primary key (id))
+;
+
+create table vote_model (
+  id                        bigint auto_increment not null,
+  score                     integer,
+  name                      varchar(255),
+  constraint pk_vote_model primary key (id))
+;
+
+
+
+
+# --- !Downs
+
+SET FOREIGN_KEY_CHECKS=0;
+
+drop table team_model;
+
+drop table user_model;
+
+drop table vote_model;
+
+SET FOREIGN_KEY_CHECKS=1;
+
