@@ -3,6 +3,14 @@
 
 # --- !Ups
 
+create table team_model (
+  id                        integer auto_increment not null,
+  teamname                  varchar(255),
+  teamdescription           varchar(255),
+  pic                       varchar(255),
+  constraint pk_team_model primary key (id))
+;
+
 create table user_model (
   id                        bigint auto_increment not null,
   username                  varchar(255),
@@ -25,6 +33,8 @@ create table vote_model (
 # --- !Downs
 
 SET FOREIGN_KEY_CHECKS=0;
+
+drop table team_model;
 
 drop table user_model;
 
