@@ -11,6 +11,14 @@ create table team_model (
   constraint pk_team_model primary key (id))
 ;
 
+create table team_model (
+  id                        integer auto_increment not null,
+  teamname                  varchar(255),
+  teamdescription           varchar(255),
+  pic                       varchar(255),
+  constraint pk_team_model primary key (id))
+;
+
 create table user_model (
   id                        bigint auto_increment not null,
   username                  varchar(255),

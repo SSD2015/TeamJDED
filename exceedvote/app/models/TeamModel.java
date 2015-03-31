@@ -28,6 +28,14 @@ public class TeamModel {
 		return teamname;
 	}
 
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
 	public void setTeamname(String teamname) {
 		this.teamname = teamname;
 	}

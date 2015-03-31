@@ -18,3 +18,7 @@ POST    /addAction      			controllers.Vote.voteItem()
 #Summary page
 
 GET		/summaryscore				controllers.Summary.index()
+
+#Admin page
+
+GET 	/admin						controllers.TeamManagement.index()
