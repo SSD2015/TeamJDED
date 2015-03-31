@@ -1,21 +1,22 @@
 # Planned Tasks
 | Objective | Priority (1= High, 3= Low) |
 | --------- |:-------------------------- |
-| Team Detail(HTML)| 1 |
-| Login System| 1 |
-| Class Diagram| 3 |
-| Team Management | 2 |
+| Team Deatail(UI) | 3 |
+| Login(System) | 1 |
+| Class Diagram | 2 |
+| Team Management(UI) | 3|
+| Team Management(System) | 1 |
 
 
 # Task
 
 | Task | Assigned to |
 | ---- |:----------- |
-| Team Deatail(HTML) | Wasin,Akkarawit |
-| Login System | Supayut,Nachanok |
+| Team Deatail(UI) | Wasin,Akkarawit |
+| Login(System) | Supayut,Nachanok |
 | Class Diagram | Wasin,Akkarawit |
-| Team Management | Supayut, Waranyu |
-
+| Team Management(UI) | Waranyu |
+| Team Management(System) | Supayut,Nachanok |
 
 # Milestone
 
@@ -23,3 +24,4 @@
 | --------- |:----------- |
 | Update system | Login System |
 | Update system | Team Management |
+| Update documentation | Class Diagram |
