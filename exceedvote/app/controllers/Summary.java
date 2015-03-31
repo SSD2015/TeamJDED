@@ -7,7 +7,9 @@ import views.html.vote;
 
 public class Summary extends Controller {
 	
-	public int point =1;
+	public int point = 1;
+	
+	//public 
 	
 	public static Result index(){
 		return ok(vote.render(VoteModel.find.all()));
