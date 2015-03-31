@@ -3,14 +3,17 @@ package models;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
+import play.db.ebean.Model;
 import play.db.ebean.Model.Finder;
 
 @Entity
-public class TeamModel {
+public class TeamModel extends Model {
 	@Id
 	public int id;
 	
-	public String teamname;
+	public int score;
+	
+	public String name;
 	
 	public String teamdescription;
 	
