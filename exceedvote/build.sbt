@@ -18,4 +18,3 @@ libraryDependencies ++= Seq(
   javaWs
 )
 
-libraryDependencies += "org.xerial" % "sqlite-jdbc" % "3.7.2"

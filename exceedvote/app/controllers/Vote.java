@@ -8,7 +8,7 @@ import views.html.*;
 public class Vote extends Controller{
 
 	public static Result index(){
-		return ok(vote.render(VoteModel.find.all()));
+		return ok(vote.render());
 	}
 	
 	public static Result voteItem() {

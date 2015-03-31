@@ -4,13 +4,13 @@ import play.*;
 import play.mvc.*;
 import play.data.*;
 import models.*;
-import views.*;
+import views.html.index;
 
 
 public class Application extends Controller {
 
     public static Result index() {
-        return ok(views.html.index.render("Your new application is ready."));
+        return ok(index.render());
     }
     
     //For login and logout
@@ -53,7 +53,7 @@ public class Application extends Controller {
 	//for clear session but now it's not work enough,I'm trying to learn about session. ::Nachanok
 	public static Result logout() {
 		session().clear();
-		return ok(views.html.index.render("Your new application is ready."));
+		return ok(index.render());
 	}
 
 }
