@@ -6,7 +6,6 @@
 | Class Diagram | 2 |
 | Team Management(UI) | 3|
 | Team Management(System) | 1 |
-| Team Model | 3 |
 
 # Task
 
@@ -17,7 +16,6 @@
 | Class Diagram | Wasin,Akkarawit |
 | Team Management(UI) | Waranyu |
 | Team Management(System) | Supayut,Nachanok |
-| Team Model | Nachanok |
 
 # Milestone
 
