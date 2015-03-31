@@ -10,7 +10,9 @@ public class TeamModel {
 	@Id
 	public int id;
 	
-	public String teamname;
+	public int score;
+	
+	public String name;
 	
 	public String teamdescription;
 	
