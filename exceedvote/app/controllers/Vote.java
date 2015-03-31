@@ -19,6 +19,10 @@ public class Vote extends Controller{
 		// redirect to index
 		return index();
 	}
+	
+	public static Result teamdetail() {
+		return ok(teamdetail.render());
+	}
 
 
 }
