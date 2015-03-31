@@ -21,4 +21,4 @@ GET		/summaryscore				controllers.Summary.index()
 
 #Admin page
 
-GET /admin							controllers.
+GET 	/admin						controllers.TeamManagement.index()
