@@ -13,7 +13,7 @@ public class TeamModel extends Model {
 	
 	public int score;
 	
-	public String name;
+	public String teamname;
 	
 	public String teamdescription;
 	
