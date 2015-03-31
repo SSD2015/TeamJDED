@@ -13,6 +13,7 @@ GET     /                           controllers.Application.index()
 #Vote page
 
 GET		/vote						controllers.Vote.index()
+GET		/vote/teamdetail			controllers.Vote.teamdetail()
 POST    /addAction      			controllers.Vote.voteItem()
 
 #Summary page
@@ -22,3 +23,4 @@ GET		/summaryscore				controllers.Summary.index()
 #Admin page
 
 GET 	/admin						controllers.TeamManagement.index()
+GET		/admin/addteam				controllers.TeamManagement.addteam()

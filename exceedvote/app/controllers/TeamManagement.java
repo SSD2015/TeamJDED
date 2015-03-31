@@ -13,6 +13,10 @@ public class TeamManagement extends Controller{
 		return ok(teammanagement.render());
 	}
 	
+	public static Result addteam() {
+		return ok(addteam.render());
+	}
+	
 	public static Result AddInform(){
 		TeamModel team = Form.form(TeamModel.class).bindFromRequest().get();
 		
