@@ -16,6 +16,7 @@
 | Class Diagram | Wasin,Akkarawit |
 | Team Management(UI) | Waranyu |
 | Team Management(System) | Supayut,Nachanok |
+| Criteria vote system | Supayut,Nachanok |
 | Update wiki | Nachanok |
 
 # Milestone
@@ -24,5 +25,6 @@
 | --------- |:----------- |
 | Update system | Login System |
 | Update system | Team Management |
+| Update system | Criteria vote system |
 | Update documentation | Class Diagram |
 | Update documentation | Update wiki |
