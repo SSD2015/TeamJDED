@@ -16,6 +16,7 @@
 | Class Diagram | Wasin,Akkarawit |
 | Team Management(UI) | Waranyu |
 | Team Management(System) | Supayut,Nachanok |
+| Update wiki | Nachanok |
 
 # Milestone
 
@@ -24,3 +25,4 @@
 | Update system | Login System |
 | Update system | Team Management |
 | Update documentation | Class Diagram |
+| Update documentation | Update wiki |
