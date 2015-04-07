@@ -14,7 +14,6 @@ public class Application extends Controller {
     }
     
     //For login and logout
-    //Nachanok: I apply from controller in "https://www.playframework.com/documentation/1.0.1/guide8" but now it's not work enough.
 	public static class Login {
 		
 		public String username;
@@ -50,7 +49,7 @@ public class Application extends Controller {
 		}
 	}*/
 	
-	//for clear session but now it's not work enough,I'm trying to learn about session. ::Nachanok
+	//clear session
 	public static Result logout() {
 		session().clear();
 		return ok(index.render());
