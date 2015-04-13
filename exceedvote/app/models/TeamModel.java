@@ -10,7 +10,7 @@ import play.db.ebean.Model;
 @Entity
 public class TeamModel extends Model {
 	@Id
-	public int id;
+	public Long id;
 	
 	@OneToMany(cascade = CascadeType.ALL)
 	public String teamname;

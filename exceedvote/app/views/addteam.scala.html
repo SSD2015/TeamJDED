@@ -7,21 +7,21 @@
 </div>
 
 <div class="container" style="border-style: solid;">
-	<form class="form-inline" action="@routes.TeamManagement.record" method="post">
+	<form class="form-inline" action="@routes.TeamManagement.recordTeam" method="post" id="test">
 		<div class="form-group">
 			
 	    	<input type="text" class="form-control" id="teamname" name="teamname" placeholder="team name">
 	  	</div>
-	<br>
+		<br>
 	<h1>Detail</h1>
-	<textarea class="form-control" rows="3" id="teamdetail" name="teamdetail"></textarea>
-	<br>
-	<br>
+	<textarea form ="test" type="text" class="form-control" cols="100" rows="5" id="teamdetail" name="teamdetail"></textarea>
+		<br>
+		<br>
 	<button class="btn btn-primary">Upload Picture</button>
-	<br>
-	<br>
+		<br>
+		<br>
 	<button class="btn btn-success" type="submit">Save</button>
-	<br>
+		<br>
 	</form>
 </div>
 }

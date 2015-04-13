@@ -1,5 +1,6 @@
 package controllers;
 
+import static play.data.Form.form;
 import models.TeamModel;
 import play.mvc.Controller;
 import play.mvc.Result;
@@ -13,7 +14,7 @@ public class TeamManagement extends Controller{
 	
 	@Security.Authenticated(Secured.class)
 	public static Result index(){
-		return ok(teammanagement.render(Secured.isLoggedIn(ctx()), Secured.getUserInfo(ctx()),Secured.isAdmin(ctx())));
+		return ok(teammanagement.render(Secured.isLoggedIn(ctx()), Secured.getUserInfo(ctx()),Secured.isAdmin(ctx()),TeamModel.find.all()));
 	}
 	
 	@Security.Authenticated(Secured.class)
@@ -21,10 +22,39 @@ public class TeamManagement extends Controller{
 		return ok(addteam.render(Secured.isLoggedIn(ctx()), Secured.getUserInfo(ctx()),Secured.isAdmin(ctx())));
 	}
 	
-	public static Result record(){
+	@Security.Authenticated(Secured.class)
+	public static Result editteam(Long id) {
+		
+		Form<TeamModel> teamForm = form(TeamModel.class).fill(
+	            TeamModel.find.byId(id)
+	        );
+	        return ok(
+	            editteam.render(id, teamForm,Secured.isLoggedIn(ctx()), Secured.getUserInfo(ctx()),Secured.isAdmin(ctx()))
+	        );
+	}
+	
+	public static Result recordTeam(){
 		TeamModel team = Form.form(TeamModel.class).bindFromRequest().get();
 		
 		team.save();
+		
+		return index();
+	}
+	
+	public static Result updateTeam(Long id ){
+		Form<TeamModel> teamForm = form(TeamModel.class).bindFromRequest();
+        if(teamForm.hasErrors()) {
+            return badRequest(editteam.render(id, teamForm,Secured.isLoggedIn(ctx()), Secured.getUserInfo(ctx()),Secured.isAdmin(ctx())));
+        }
+        teamForm.get().update(id);
+        
+        //flash("success", "Team " + teamForm.get().name + " has been updated");
+		
+		return index();
+	}
+	
+	public static Result deleteTeam(Long id){
+		TeamModel.find.ref(id).delete();
 		
 		return index();
 	}

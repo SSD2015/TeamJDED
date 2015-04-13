@@ -26,4 +26,7 @@ GET		/summaryscore				controllers.Summary.index
 
 GET 	/admin						controllers.TeamManagement.index
 GET		/admin/addteam				controllers.TeamManagement.addteam
-POST	/admin/addteam				controllers.TeamManagement.record
+POST	/admin/addteam				controllers.TeamManagement.recordTeam
+GET		/admin/editteam				controllers.TeamManagement.editteam(id:Long)
+POST	/admin/editteam				controllers.TeamManagement.updateTeam(id:Long)
+POST	/admin/deleteteam/:id		controllers.TeamManagement.deleteTeam(id:Long)
