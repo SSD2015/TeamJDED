@@ -26,7 +26,13 @@ public class Secured extends Security.Authenticator {
     return (getUser(ctx) != null);
   }
   
+  public static boolean isAdmin(Context ctx) {
+	  	
+	    return (getUser(ctx)!= null ? UserModel.getUser(getUser(ctx)).isAdmin : false);
+  }
+  
   public static UserModel getUserInfo(Context ctx) {
     return (isLoggedIn(ctx) ? UserModel.getUser(getUser(ctx)) : null);
   }
+
 }

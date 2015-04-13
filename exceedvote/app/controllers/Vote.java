@@ -11,7 +11,7 @@ public class Vote extends Controller{
 	
 	@Security.Authenticated(Secured.class)
 	public static Result index(){
-		return ok(vote.render(Secured.isLoggedIn(ctx()), Secured.getUserInfo(ctx())));
+		return ok(criteria.render(Secured.isLoggedIn(ctx()), Secured.getUserInfo(ctx()),Secured.isAdmin(ctx())));
 	}
 	
 	public static Result voteItem() {
@@ -25,7 +25,7 @@ public class Vote extends Controller{
 	
 	@Security.Authenticated(Secured.class)
 	public static Result teamdetail() {
-		return ok(teamdetail.render(Secured.isLoggedIn(ctx()), Secured.getUserInfo(ctx())));
+		return ok(teamdetail.render(Secured.isLoggedIn(ctx()), Secured.getUserInfo(ctx()),Secured.isAdmin(ctx())));
 	}
 
 

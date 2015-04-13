@@ -1,13 +1,14 @@
-@(isLoggedIn: Boolean, userInfo: UserModel)
+@(isLoggedIn: Boolean, userInfo: UserModel,isAdmin : Boolean)
 
 
-@main("Admin Page || ExceedVote by JDED",isLoggedIn, userInfo) {
-	
+
+@main("Admin Page || ExceedVote by JDED",isLoggedIn, userInfo,isAdmin) {
+	@if(isAdmin){
 	<div class="jumbotron text-center">
-		<h1>Admin Page</h1>
+		<h1>Admin</h1>
 	</div>
 	<div class="container">
-		<form action="/addAction" method="post">
+		<form>
 			<table class="table table-striped table-hover">
 				<thead>
 					<tr class="centert" style="font-weight: bold;border-bottom: 1px solid #cef; white-space: nowrap">
@@ -32,8 +33,38 @@
 					</tr>
 				</thead>
 			</table>
-    		<button class="btn btn-primary" type="submit">Add new team</button>
+    		<a class="btn btn-primary" type="submit" href="@routes.TeamManagement.addteam">Add Team</a>
 		</form>
+		<br>
+		<br>
+		<br>
+		<br>
+		<form action="/addAction" method="post">
+			<table class="table table-striped table-hover">
+				<thead>
+					<tr class="centert" style="font-weight: bold;border-bottom: 1px solid #cef; white-space: nowrap">
+						<th class='text-overflow' style="max-width:200px; width: 50px; vertical-align: middle;">Criteria<br/></th>
+					</tr>
+					<tr style='white-space: nowrap'>
+						<td class='text-overflow' style='max-width:200px; width: 50px'>Team A</td>
+					</tr>
+				</thead>
+			</table>
+    		<button class="btn btn-primary" type="submit">Add Criteria</button>
+		</form>
+	
+	
+	
+	
 	</div>
-
+	
+	
+	
+	
+	
+	}else {
+		<div class="container text-center">
+			<h2>Permission denied</h2>
+		</div>	
+	}
 }

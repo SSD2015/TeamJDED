@@ -1,6 +1,6 @@
-@(isLoggedIn: Boolean, userInfo: UserModel)
+@(isLoggedIn: Boolean, userInfo: UserModel,isAdmin : Boolean)
 
-@main("ExceedVote by JDED",isLoggedIn, userInfo) {
+@main("ExceedVote by JDED",isLoggedIn, userInfo,isAdmin) {
 	<div class="container">
 		@if(!isLoggedIn){
 			<form class="form-signin" action=@routes.Application.postLogin method="post">   
@@ -21,6 +21,9 @@
 		 }else{
 		 	<div class="jumbotron text-center">
 			    <h2>Exceed Vote</h2>
+			    <form class="form-signin">
+			   		<img src="@routes.Assets.at("images/logo.jpg")" class="img-responsive" alt="Responsive image">
+			    </form> 
 			</div>
 		 }
 		

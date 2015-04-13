@@ -1,22 +1,27 @@
-@(isLoggedIn: Boolean, userInfo: UserModel)
+@(isLoggedIn: Boolean, userInfo: UserModel,isAdmin : Boolean)
 
-@main("Add Team Page || ExceedVote by JDED",isLoggedIn, userInfo) {
+@main("Add Team Page || ExceedVote by JDED",isLoggedIn, userInfo,isAdmin) {
 <center>
 <div class="jumbotron text-center">
-	<form class="form-inline">
-		<div class="form-group">
-			<h1>Add Team</h1>
-	    	<input type="text" class="form-control" id="teamname" placeholder="team name">
-	  	</div>
-	</form>
-	<button class="btn btn-primary">Upload Picture</button>
+	<h1>Add Team</h1>
 </div>
+
 <div class="container" style="border-style: solid;">
-	<br />
+	<form class="form-inline" action="@routes.TeamManagement.record" method="post">
+		<div class="form-group">
+			
+	    	<input type="text" class="form-control" id="teamname" name="teamname" placeholder="team name">
+	  	</div>
+	<br>
 	<h1>Detail</h1>
-	<textarea class="form-control" rows="3"></textarea>
-	<br />
+	<textarea class="form-control" rows="3" id="teamdetail" name="teamdetail"></textarea>
+	<br>
+	<br>
+	<button class="btn btn-primary">Upload Picture</button>
+	<br>
+	<br>
 	<button class="btn btn-success" type="submit">Save</button>
-	<br />
+	<br>
+	</form>
 </div>
 }

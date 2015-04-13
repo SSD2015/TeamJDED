@@ -1,4 +1,4 @@
-@(title: String, isLoggedIn: Boolean, userInfo: UserModel)(content: Html)
+@(title: String, isLoggedIn: Boolean, userInfo: UserModel,isAdmin :Boolean)(content: Html)
 
 @activeLink(currentPath:String) = @{
 	if(request.path.equals(currentPath)) "active"
@@ -43,12 +43,16 @@
 	            <li class="@activeLink("/summaryscore")"><a href="@routes.Summary.index()">Summary Score</a></li>
 	          </ul>
 	          <ul class="nav navbar-nav navbar-right">
-				  @if(isLoggedIn) {
-		            <li><p class="navbar-text">@userInfo.username</p></li>
+				  @if(isLoggedIn && isAdmin) {
+		            <li><p class="navbar-text">@userInfo.name</p></li>
+		            <li class="@activeLink("/admin")"><a href="@routes.TeamManagement.index">Admin</a></li>
 		            <li><a href="@routes.Application.logout">Logout</a></li>
+		          } else { @if(isLoggedIn){
+		          	<li><p class="navbar-text">@userInfo.name</p></li>
+		          	<li><a href="@routes.Application.logout">Logout</a></li>
 		          } else {
 		            <li><a href="@routes.Application.index">Login</a></li>
-		          }
+		          }}
               </ul>
 	        </div><!--/.nav-collapse -->
 	      </div>

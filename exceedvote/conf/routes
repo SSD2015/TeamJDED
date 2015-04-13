@@ -26,3 +26,4 @@ GET		/summaryscore				controllers.Summary.index
 
 GET 	/admin						controllers.TeamManagement.index
 GET		/admin/addteam				controllers.TeamManagement.addteam
+POST	/admin/addteam				controllers.TeamManagement.record

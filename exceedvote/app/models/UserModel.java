@@ -3,14 +3,16 @@ package models;
 
 import javax.persistence.*;
 
+import play.db.ebean.Model;
 import play.db.ebean.Model.Finder;
 
 
 @Entity
-public class UserModel {
+public class UserModel extends Model{
 	@Id
 	public Long id;
 	
+	@OneToMany(cascade = CascadeType.ALL)
 	public String username;
 	
 	public String password;

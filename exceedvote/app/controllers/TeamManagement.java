@@ -13,15 +13,15 @@ public class TeamManagement extends Controller{
 	
 	@Security.Authenticated(Secured.class)
 	public static Result index(){
-		return ok(teammanagement.render(Secured.isLoggedIn(ctx()), Secured.getUserInfo(ctx())));
+		return ok(teammanagement.render(Secured.isLoggedIn(ctx()), Secured.getUserInfo(ctx()),Secured.isAdmin(ctx())));
 	}
 	
 	@Security.Authenticated(Secured.class)
 	public static Result addteam() {
-		return ok(addteam.render(Secured.isLoggedIn(ctx()), Secured.getUserInfo(ctx())));
+		return ok(addteam.render(Secured.isLoggedIn(ctx()), Secured.getUserInfo(ctx()),Secured.isAdmin(ctx())));
 	}
 	
-	public static Result AddInform(){
+	public static Result record(){
 		TeamModel team = Form.form(TeamModel.class).bindFromRequest().get();
 		
 		team.save();

@@ -14,18 +14,24 @@ public class VoteModel extends Model {
 	@Id
 	public Long id;
 	
-	public int score;
+	@ManyToOne
+	public UserModel user;
 	
-	public String name;
+	@ManyToOne
+	public CriteriaModel criteria;
+	
+	@ManyToOne
+	public TeamModel team;	
+	
 	
 	// Finder will help us easily query data from database.
 	public static Finder<Long, VoteModel> find = new Finder<Long, VoteModel>(Long.class, VoteModel.class);
 	
-	
+
 	public static Map<String,Integer> options() {
         LinkedHashMap<String,Integer> options = new LinkedHashMap<String,Integer>();
         int teamA = 0,teamB = 0,teamC = 0,teamD = 0 ;
-        
+        /*  
         for(VoteModel c: VoteModel.find.orderBy("name").findList()) {
            String str = ""+c.name;
         	if (str.equals("a")) teamA++;
@@ -35,6 +41,7 @@ public class VoteModel extends Model {
         	
         	//options.put(c.id.toString(), c.name);
         }
+        */
         options.put("teamA", teamA);
         options.put("teamB", teamB);
         options.put("teamC", teamC);
@@ -46,10 +53,11 @@ public class VoteModel extends Model {
         LinkedHashMap<String,String> options = new LinkedHashMap<String,String>();
         
         for(VoteModel c: VoteModel.find.orderBy("name").findList()) {
-        	String str = ""+c.name;
-        		options.put(c.id.toString(), str);
+      //  	String str = ""+c.name;
+      //  		options.put(c.id.toString(), str);
         }
        
         return options;
     }
+
 }
