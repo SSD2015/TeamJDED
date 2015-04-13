@@ -28,26 +28,31 @@
 				}
 			</thead>
 		</table>
-   		<a class="btn btn-primary" type="submit" href="@routes.TeamManagement.addteam">Add Team</a>
+   		<a class="btn btn-primary" type="submit" href="@routes.TeamManagement.addteam">Add Project</a>
 	
 		<br>
 		<br>
 		<br>
 		<br>
-		<form action="/addAction" method="post">
-			<table class="table table-striped table-hover">
-				<thead>
-					<tr class="centert" style="font-weight: bold;border-bottom: 1px solid #cef; white-space: nowrap">
-						<th class='text-overflow' style="max-width:200px; width: 50px; vertical-align: middle;">Criteria<br/></th>
-					</tr>
+		<table class="table table-striped table-hover">
+			<thead>
+				<tr class="centert" style="font-weight: bold;border-bottom: 1px solid #cef; white-space: nowrap">
+					<th class='text-overflow' style="max-width:200px; width: 50px; vertical-align: middle;">Criteria<br/></th>
+					<th class='text-overflow' style="max-width:100px; width: 5px; vertical-align: middle;">Edit<br/></th>
+				</tr>
+				@teams.map { team =>
 					<tr style='white-space: nowrap'>
-						<td class='text-overflow' style='max-width:200px; width: 50px'>Team A</td>
+						<td class='text-overflow' style='max-width:200px; width: 50px'>@team.teamname</td>
+						<td class='text-overflow' style='max-width:100px; width: 5px'>
+							<form action="@routes.TeamManagement.deleteTeam(team.id)" method="post">
+								<input class="btn btn-danger" type="submit" value="Delete">
+							</form>
+						</td>
 					</tr>
-				</thead>
-			</table>
-    		<button class="btn btn-primary" type="submit">Add Criteria</button>
-		</form>
-	
+				}
+			</thead>
+		</table>
+   		<a class="btn btn-primary" type="submit" href="@routes.TeamManagement.addteam">New Criteria</a>
 	
 	
 	
