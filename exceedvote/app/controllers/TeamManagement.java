@@ -6,15 +6,19 @@ import play.mvc.Result;
 import views.html.*;
 import play.mvc.*;
 import play.data.Form;
+import play.mvc.Security;
+
 
 public class TeamManagement extends Controller{
-
+	
+	@Security.Authenticated(Secured.class)
 	public static Result index(){
-		return ok(teammanagement.render());
+		return ok(teammanagement.render(Secured.isLoggedIn(ctx()), Secured.getUserInfo(ctx())));
 	}
 	
+	@Security.Authenticated(Secured.class)
 	public static Result addteam() {
-		return ok(addteam.render());
+		return ok(addteam.render(Secured.isLoggedIn(ctx()), Secured.getUserInfo(ctx())));
 	}
 	
 	public static Result AddInform(){

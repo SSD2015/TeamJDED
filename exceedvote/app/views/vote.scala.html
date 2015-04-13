@@ -1,5 +1,7 @@
+@(isLoggedIn: Boolean, userInfo: UserModel)
 
-@main("Vote Page || ExceedVote by JDED") {
+
+@main("Vote Page || ExceedVote by JDED",isLoggedIn, userInfo) {
 	
 	<div class="jumbotron text-center">
 		<h1>Vote Page</h1>
@@ -14,24 +16,24 @@
 						<th class='text-overflow' style="max-width:100px; width: 5px; vertical-align: middle;">Detail<br/></th>
 					</tr>
 					<tr style='white-space: nowrap'>
-						<td class='text-overflow' style='max-width:100px; width: 30px'><input type="radio" name="name" id="teama" value="a" /></td>
+						<td class='text-overflow' style='max-width:100px; width: 30px'><input type="radio" name="name" id="teama" required value="a" /></td>
 						<td class='text-overflow' style='max-width:200px; width: 50px'>Team A</td>
-						<td class='text-overflow' style='max-width:100px; width: 5px'><button type="button" class="btn btn-info">Detail</button></td>
+						<td class='text-overflow' style='max-width:100px; width: 5px'><a type="button" class="btn btn-info" href="@routes.Vote.teamdetail()">Detail</a></td>
 					</tr>
 					<tr style='white-space: nowrap'>
 						<td class='text-overflow' style='max-width:100px; width: 30px'><input type="radio" name="name" id="teamb" value="b" /></td>
 						<td class='text-overflow' style='max-width:200px; width: 50px'>Team B</td>
-						<td class='text-overflow' style='max-width:100px; width: 5px'><button type="button" class="btn btn-info">Detail</button></td>
+						<td class='text-overflow' style='max-width:100px; width: 5px'><a type="button" class="btn btn-info" href="@routes.Vote.teamdetail()">Detail</a></td>
 					</tr>
 					<tr style='white-space: nowrap'>
 						<td class='text-overflow' style='max-width:100px; width: 30px'><input type="radio" name="name" id="teamc" value="c" /></td>
 						<td class='text-overflow' style='max-width:200px; width: 50px'>Team C</td>
-						<td class='text-overflow' style='max-width:100px; width: 5px'><button type="button" class="btn btn-info">Detail</button></td>
+						<td class='text-overflow' style='max-width:100px; width: 5px'><a type="button" class="btn btn-info" href="@routes.Vote.teamdetail()">Detail</a></td>
 					</tr>
 					<tr style='white-space: nowrap'>
 						<td class='text-overflow' style='max-width:100px; width: 30px'><input type="radio" name="name" id="teamd" value="d" /></td>
 						<td class='text-overflow' style='max-width:200px; width: 50px'>Team D</td>
-						<td class='text-overflow' style='max-width:100px; width: 5px'><button type="button" class="btn btn-info">Detail</button></td>
+						<td class='text-overflow' style='max-width:100px; width: 5px'><a type="button" class="btn btn-info" href="@routes.Vote.teamdetail()">Detail</a></td>
 					</tr>
 				</thead>
 			</table>
@@ -39,5 +41,6 @@
 		</form>
 	</div>
 		
+
 
 }

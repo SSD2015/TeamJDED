@@ -21,5 +21,9 @@ public class UserModel {
 	
 	public static Finder<Long, UserModel> find = new Finder<Long, UserModel>(Long.class, UserModel.class);
 	
-	
+	public static UserModel getUser(String username){
+		//UserAdmin admins = new UserAdmin();
+		return find.where().eq("username", username).findUnique();
+	}
+
 }

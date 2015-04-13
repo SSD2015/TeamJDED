@@ -1,18 +1,28 @@
-@main("ExceedVote by JDED") {
-	<div class="container">
+@(isLoggedIn: Boolean, userInfo: UserModel)
 
-      <form class="form-signin">
-        <h2 class="form-signin-heading">Please sign in</h2>
-        <label for="inputUser" class="sr-only">Username</label>
-        <input type="user" id="inputEmail" class="form-control" placeholder="Username" required autofocus>
-        <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" value="remember-me"> Remember me
-          </label>
-        </div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-      </form>
-    </div> <!-- /container -->
+@main("ExceedVote by JDED",isLoggedIn, userInfo) {
+	<div class="container">
+		@if(!isLoggedIn){
+			<form class="form-signin" action=@routes.Application.postLogin method="post">   
+		        <h2 class="form-signin-heading">	Please sign in</h2>
+		        <label for="inputUser" class="sr-only">Username</label>
+		        <input type="user" id="username" name="username" class="form-control" placeholder="Username" required autofocus>
+		        <label for="inputPassword" class="sr-only">Password</label>
+		        <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
+		        <div class="checkbox">
+		        </div>
+		        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+			 @if(flash.containsKey("error")) {
+	           <div id="error-message" class="text-danger">
+	             @flash.get("error")
+	           </div>
+	         }
+			 </form>
+		 }else{
+		 	<div class="jumbotron text-center">
+			    <h2>Exceed Vote</h2>
+			</div>
+		 }
+		
+	</div>
 }

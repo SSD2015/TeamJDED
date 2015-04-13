@@ -1,6 +1,6 @@
-@(votes: Map[String,Integer])
+@(votes: Map[String,Integer],isLoggedIn: Boolean, userInfo: UserModel)
 
-@main("Summary Page || ExceedVote by JDED") {
+@main("Summary Page || ExceedVote by JDED",isLoggedIn, userInfo) {
 	
 	<div class="jumbotron text-center">
 		<h1>Summary Page</h1>

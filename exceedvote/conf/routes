@@ -6,21 +6,23 @@
 GET     /assets/*file               controllers.Assets.at(path="/public", file)
 
 # Home page
-GET     /                           controllers.Application.index()
-
+GET     /                           controllers.Application.index
+GET		/login						controllers.Application.index
+POST	/login						controllers.Application.postLogin
+GET		/logout						controllers.Application.logout						
 #Register page						
 
 #Vote page
 
-GET		/vote						controllers.Vote.index()
-GET		/vote/teamdetail			controllers.Vote.teamdetail()
-POST    /addAction      			controllers.Vote.voteItem()
+GET		/vote						controllers.Vote.index
+GET		/vote/teamdetail			controllers.Vote.teamdetail
+POST    /addAction      			controllers.Vote.voteItem
 
 #Summary page
 
-GET		/summaryscore				controllers.Summary.index()
+GET		/summaryscore				controllers.Summary.index
 
 #Admin page
 
-GET 	/admin						controllers.TeamManagement.index()
-GET		/admin/addteam				controllers.TeamManagement.addteam()
+GET 	/admin						controllers.TeamManagement.index
+GET		/admin/addteam				controllers.TeamManagement.addteam

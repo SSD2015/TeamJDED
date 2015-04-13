@@ -4,11 +4,14 @@ import models.VoteModel;
 import play.data.Form;
 import play.mvc.*;
 import views.html.*;
+import play.mvc.Security;
+
 
 public class Vote extends Controller{
-
+	
+	@Security.Authenticated(Secured.class)
 	public static Result index(){
-		return ok(vote.render());
+		return ok(vote.render(Secured.isLoggedIn(ctx()), Secured.getUserInfo(ctx())));
 	}
 	
 	public static Result voteItem() {
@@ -20,8 +23,9 @@ public class Vote extends Controller{
 		return index();
 	}
 	
+	@Security.Authenticated(Secured.class)
 	public static Result teamdetail() {
-		return ok(teamdetail.render());
+		return ok(teamdetail.render(Secured.isLoggedIn(ctx()), Secured.getUserInfo(ctx())));
 	}
 
 
