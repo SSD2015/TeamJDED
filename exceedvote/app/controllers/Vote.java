@@ -1,5 +1,6 @@
 package controllers;
 
+import models.CriteriaModel;
 import models.VoteModel;
 import play.data.Form;
 import play.mvc.*;
@@ -11,7 +12,8 @@ public class Vote extends Controller{
 	
 	@Security.Authenticated(Secured.class)
 	public static Result index(){
-		return ok(criteria.render(Secured.isLoggedIn(ctx()), Secured.getUserInfo(ctx()),Secured.isAdmin(ctx())));
+		return ok(criteria.render(Secured.isLoggedIn(ctx()), Secured.getUserInfo(ctx()),Secured.isAdmin(ctx())
+				,CriteriaModel.find.all( )));
 	}
 	
 	public static Result voteItem() {

@@ -11,7 +11,8 @@ create table criteria_model (
 
 create table rate_model (
   id                        bigint auto_increment not null,
-  team_name                 varchar(255),
+  user_id                   bigint,
+  team_id                   bigint,
   rate                      integer,
   constraint pk_rate_model primary key (id))
 ;
@@ -41,12 +42,16 @@ create table vote_model (
   constraint pk_vote_model primary key (id))
 ;
 
-alter table vote_model add constraint fk_vote_model_user_1 foreign key (user_id) references user_model (id) on delete restrict on update restrict;
-create index ix_vote_model_user_1 on vote_model (user_id);
-alter table vote_model add constraint fk_vote_model_criteria_2 foreign key (criteria_id) references criteria_model (id) on delete restrict on update restrict;
-create index ix_vote_model_criteria_2 on vote_model (criteria_id);
-alter table vote_model add constraint fk_vote_model_team_3 foreign key (team_id) references team_model (id) on delete restrict on update restrict;
-create index ix_vote_model_team_3 on vote_model (team_id);
+alter table rate_model add constraint fk_rate_model_user_1 foreign key (user_id) references user_model (id) on delete restrict on update restrict;
+create index ix_rate_model_user_1 on rate_model (user_id);
+alter table rate_model add constraint fk_rate_model_team_2 foreign key (team_id) references team_model (id) on delete restrict on update restrict;
+create index ix_rate_model_team_2 on rate_model (team_id);
+alter table vote_model add constraint fk_vote_model_user_3 foreign key (user_id) references user_model (id) on delete restrict on update restrict;
+create index ix_vote_model_user_3 on vote_model (user_id);
+alter table vote_model add constraint fk_vote_model_criteria_4 foreign key (criteria_id) references criteria_model (id) on delete restrict on update restrict;
+create index ix_vote_model_criteria_4 on vote_model (criteria_id);
+alter table vote_model add constraint fk_vote_model_team_5 foreign key (team_id) references team_model (id) on delete restrict on update restrict;
+create index ix_vote_model_team_5 on vote_model (team_id);
 
 
 

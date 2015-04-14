@@ -16,6 +16,7 @@
         <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
         <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
         <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/bootstrap.css")">
+        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/bootstrap-rating.css")">
         <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/starter-template.css")">
         <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/signin.css")">
         
@@ -23,6 +24,8 @@
         <script src="@routes.Assets.at("javascripts/hello.js")" type="text/javascript"></script>
         <script src="@routes.Assets.at("javascripts/jquery1-11-2.min.js")" type="text/javascript"></script>
         <script src="@routes.Assets.at("javascripts/bootstrap.min.js")" type="text/javascript"></script>
+        <script src="@routes.Assets.at("javascripts/tooltip.js")" type="text/javascript"></script>
+        <script src="@routes.Assets.at("javascripts/bootstrap-rating.js")" type="text/javascript"></script>
     </head>
     <body>
     	<nav class="navbar navbar-inverse navbar-fixed-top">
@@ -40,6 +43,7 @@
 	          <ul class="nav navbar-nav">
 	            <li class="@activeLink("/")"><a href="@routes.Application.index()">Home</a></li>
 	            <li class="@activeLink("/vote")"><a href="@routes.Vote.index()">Vote</a></li>
+	            <li class="@activeLink("/rate")"><a href="@routes.Rate.index()">Rate</a></li>
 	            <li class="@activeLink("/summaryscore")"><a href="@routes.Summary.index()">Summary Score</a></li>
 	          </ul>
 	          <ul class="nav navbar-nav navbar-right">

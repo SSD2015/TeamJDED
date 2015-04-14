@@ -1,13 +1,18 @@
-@(isLoggedIn: Boolean, userInfo: UserModel,isAdmin : Boolean)
+@(isLoggedIn: Boolean, userInfo: UserModel,isAdmin : Boolean,criterias :List[CriteriaModel])
 
 
 @main("Vote Page || ExceedVote by JDED",isLoggedIn, userInfo,isAdmin) {
 	
 	<div class="jumbotron text-center">
-		<h1>Vote Page</h1>
+		<h2>Vote</h2>
+		
 	</div>
 	<div class="container">
-
+		@criterias.map { criteria =>
+			@criteria.criName
+			<br>
+		
+		}
 	</div>
 		
 

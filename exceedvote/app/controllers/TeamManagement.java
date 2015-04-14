@@ -14,7 +14,7 @@ public class TeamManagement extends Controller{
 	
 	@Security.Authenticated(Secured.class)
 	public static Result index(){
-		return ok(teammanagement.render(Secured.isLoggedIn(ctx()), Secured.getUserInfo(ctx()),Secured.isAdmin(ctx())
+		return ok(management.render(Secured.isLoggedIn(ctx()), Secured.getUserInfo(ctx()),Secured.isAdmin(ctx())
 				,TeamModel.find.all(),CriteriaModel.find.all()));
 	}
 	

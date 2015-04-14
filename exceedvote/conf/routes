@@ -18,6 +18,10 @@ GET		/vote						controllers.Vote.index
 GET		/vote/teamdetail			controllers.Vote.teamdetail
 POST    /addAction      			controllers.Vote.voteItem
 
+#Rate
+GET		/rate						controllers.Rate.index
+POST	/rate/submit				controllers.Rate.submit(userid:Long,teamid:Long)
+
 #Summary page
 
 GET		/summaryscore				controllers.Summary.index

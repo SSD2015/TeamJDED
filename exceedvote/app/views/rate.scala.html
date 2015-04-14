@@ -1,0 +1,100 @@
+@(isLoggedIn: Boolean, userInfo: UserModel,isAdmin : Boolean,teams : List[TeamModel],rateUser:List[RateModel])
+
+
+@main("Rate Page || ExceedVote by JDED",isLoggedIn, userInfo,isAdmin) {
+	
+	<div class="jumbotron text-center">
+		<h2>Ratings</h2>
+		
+	</div>
+	<div class="container">
+
+			<table class="table table-striped table-hover">
+				<thead>
+					<tr class="centert" style="font-weight: bold;border-bottom: 1px solid #cef; white-space: nowrap">
+						<th class='text-overflow' style="max-width:250px; width: 50px; vertical-align: middle;">Project<br/></th>
+						<th class='text-overflow' style="max-width:30px; width: 5px; vertical-align: middle;">Rate<br/></th>
+						<th class='text-overflow' style="max-width:30px; width: 5px; vertical-align: middle;">Save<br/></th>
+					</tr>
+					@teams.map { team =>
+						
+						<form action="@routes.Rate.submit(userInfo.id,team.id)" method="post">
+							
+								<tr style='white-space: nowrap'>
+									<td class='text-overflow' style='max-width:250px; width: 50px'>
+										@team.teamname :
+										<a data-toggle="collapse" href="#detail@team.id" aria-expanded="false" aria-controls="collapseExample">
+											Detail
+										</a>
+										<div class="collapse" id="detail@team.id">
+										  <div class="well">
+										  	@team.teamdetail
+										  </div>
+										</div>
+									</td>
+									<td class='text-overflow' style='max-width:30px; width: 5px'>
+										<input type="hidden" class="rating-tooltip" name="rate" 
+											@for(x <- rateUser){
+												@if(x.team.id==team.id){
+												value="@x.rate"
+												}
+											}/>												
+									</td>
+									<td class='text-overflow' style='max-width:30px; width: 5px'>					
+										<button id="myAlert" class="btn btn-primary" type="submit">Save</button>
+									</td>
+								</tr>
+						</form>
+					}
+				</thead>
+			</table>
+    		
+		
+	</div>
+		<script>
+      $(function () {
+        $('input.check').on('change', function () {
+          alert('Rating: ' + $(this).val());
+        });
+        $('.rating-tooltip').rating({
+          extendSymbol: function (rate) {
+            $(this).tooltip({
+              container: 'body',
+              placement: 'bottom',
+              title: 'Rate ' + rate
+            });
+          }
+        });
+        $('.rating-tooltip-manual').rating({
+          extendSymbol: function () {
+            var title;
+            $(this).tooltip({
+              container: 'body',
+              placement: 'bottom',
+              trigger: 'manual',
+              title: function () {
+                return title;
+              }
+            });
+            $(this).on('rating.rateenter', function (e, rate) {
+              title = rate;
+              $(this).tooltip('show');
+            })
+            .on('rating.rateleave', function () {
+              $(this).tooltip('hide');
+            });
+          }
+        });
+        $('.rating').each(function () {
+          $('<span class="label label-default"></span>')
+            .text($(this).val() || ' ')
+            .insertAfter(this);
+        });
+        $('.rating').on('change', function () {
+          $(this).next('.label').text($(this).val());
+        });
+      });
+    </script>
+
+
+}

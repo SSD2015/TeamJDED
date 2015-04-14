@@ -47,8 +47,7 @@
 				@criterias.map { criteria =>
 					<tr style='white-space: nowrap'>
 						<td class='text-overflow' style='max-width:200px; width: 50px'>@criteria.criName</td>
-						<td class='text-overflow' style='max-width:100px; width: 5px'>
-							
+						<td class='text-overflow' style='max-width:100px; width: 5px'>					
 							<a class="btn btn-primary" data-toggle="collapse" href="#editCriteria@criteria.id" aria-expanded="false" aria-controls="collapseExample">
 								Edit
 							</a>
@@ -60,9 +59,6 @@
 							    </form>
 							  </div>
 							</div>
-							
-
-							
 						</td>
 						<td class='text-overflow' style='max-width:100px; width: 5px'>
 							<form action="@routes.TeamManagement.deleteCriteria(criteria.id)" method="post">
