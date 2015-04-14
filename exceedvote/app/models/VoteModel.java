@@ -28,24 +28,13 @@ public class VoteModel extends Model {
 	public static Finder<Long, VoteModel> find = new Finder<Long, VoteModel>(Long.class, VoteModel.class);
 	
 
-	public static Map<String,Integer> options() {
-        LinkedHashMap<String,Integer> options = new LinkedHashMap<String,Integer>();
-        int teamA = 0,teamB = 0,teamC = 0,teamD = 0 ;
-        /*  
-        for(VoteModel c: VoteModel.find.orderBy("name").findList()) {
-           String str = ""+c.name;
-        	if (str.equals("a")) teamA++;
-            else if(c.name.equals("b")) teamB++;
-            	else if(c.name.equals("c")) teamC++;
-            		else if(c.name.equals("d"))teamD++;
+	public static ArrayList<VoteModel> getUser(UserModel localUser) {
+        ArrayList<VoteModel> options = new ArrayList<VoteModel>();
+        for(VoteModel info: VoteModel.find.where().ilike("user_id", localUser.id+"").findList()) {
+            	options.add(info);
         	
-        	//options.put(c.id.toString(), c.name);
         }
-        */
-        options.put("teamA", teamA);
-        options.put("teamB", teamB);
-        options.put("teamC", teamC);
-        options.put("teamD", teamD);
+        
         return options;
     }
 	

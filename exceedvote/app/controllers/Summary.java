@@ -3,7 +3,7 @@ package controllers;
 import models.VoteModel;
 import play.mvc.Controller;
 import play.mvc.Result;
-import views.html.summaryscore;
+import views.html.*;
 import play.mvc.Security;
 
 public class Summary extends Controller {
@@ -13,6 +13,7 @@ public class Summary extends Controller {
 	
 	@Security.Authenticated(Secured.class)
 	public static Result index(){
-		return ok(summaryscore.render(VoteModel.options(),Secured.isLoggedIn(ctx()), Secured.getUserInfo(ctx()),Secured.isAdmin(ctx())));
+		//return ok(summaryscore.render(VoteModel.options(),Secured.isLoggedIn(ctx()), Secured.getUserInfo(ctx()),Secured.isAdmin(ctx())));
+		return ok(index.render(Secured.isLoggedIn(ctx()), Secured.getUserInfo(ctx()),Secured.isAdmin(ctx())));
 	}
 }

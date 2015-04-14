@@ -9,26 +9,24 @@ GET     /assets/*file               controllers.Assets.at(path="/public", file)
 GET     /                           controllers.Application.index
 GET		/login						controllers.Application.index
 POST	/login						controllers.Application.postLogin
-GET		/logout						controllers.Application.logout						
-#Register page						
+GET		/logout						controllers.Application.logout												
 
 #Vote page
-
-GET		/vote						controllers.Vote.index
-GET		/vote/teamdetail			controllers.Vote.teamdetail
-POST    /addAction      			controllers.Vote.voteItem
+GET		/criteria					controllers.Vote.index
+GET		/vote						controllers.Vote.vote(criteriaid:Long)
+POST    /vote/submit      			controllers.Vote.voteItem(userid:Long,criteriaid:Long,teamid:Long)
 
 #Rate
 GET		/rate						controllers.Rate.index
 POST	/rate/submit				controllers.Rate.submit(userid:Long,teamid:Long)
 
 #Summary page
-
 GET		/summaryscore				controllers.Summary.index
 
-#Admin page
 
+#Admin page
 GET 	/admin						controllers.TeamManagement.index
+
 #Team
 GET		/admin/addteam				controllers.TeamManagement.addteam
 POST	/admin/addteam				controllers.TeamManagement.recordTeam

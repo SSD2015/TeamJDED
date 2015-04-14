@@ -18,7 +18,7 @@
 					</tr>
 					@teams.map { team =>
 						
-						<form action="@routes.Rate.submit(userInfo.id,team.id)" method="post">
+						<form action="@routes.Rate.submit(userInfo.id,team.id)" method="post" onsubmit="return alert('Thank you');">
 							
 								<tr style='white-space: nowrap'>
 									<td class='text-overflow' style='max-width:250px; width: 50px'>

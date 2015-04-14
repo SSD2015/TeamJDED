@@ -44,10 +44,7 @@ public class Rate extends Controller{
 		return index();
 	}
 	
-	@Security.Authenticated(Secured.class)
-	public static Result teamdetail() {
-		return ok(teamdetail.render(Secured.isLoggedIn(ctx()), Secured.getUserInfo(ctx()),Secured.isAdmin(ctx())));
-	}
+
 
 
 }

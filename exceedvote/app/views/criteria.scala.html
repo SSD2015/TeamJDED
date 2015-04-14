@@ -9,10 +9,16 @@
 	</div>
 	<div class="container">
 		@criterias.map { criteria =>
-			@criteria.criName
+			<a href="@routes.Vote.vote(criteria.id)">
+				@criteria.criName
+			</a>
+			
 			<br>
 		
 		}
+			
+
+			
 	</div>
 		
 
