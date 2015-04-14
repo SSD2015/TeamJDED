@@ -1,4 +1,4 @@
-@(isLoggedIn: Boolean, userInfo: UserModel,isAdmin : Boolean,teams: List[TeamModel])
+@(isLoggedIn: Boolean, userInfo: UserModel,isAdmin : Boolean,teams: List[TeamModel],criterias: List[CriteriaModel])
 
 
 
@@ -14,13 +14,16 @@
 				<tr class="centert" style="font-weight: bold;border-bottom: 1px solid #cef; white-space: nowrap">
 					<th class='text-overflow' style="max-width:200px; width: 50px; vertical-align: middle;">Team<br/></th>
 					<th class='text-overflow' style="max-width:100px; width: 5px; vertical-align: middle;">Edit<br/></th>
+					<th class='text-overflow' style="max-width:100px; width: 5px; vertical-align: middle;">Delete<br/></th>
 				</tr>
 				@teams.map { team =>
 					<tr style='white-space: nowrap'>
 						<td class='text-overflow' style='max-width:200px; width: 50px'>@team.teamname</td>
 						<td class='text-overflow' style='max-width:100px; width: 5px'>
+							<a class="btn btn-primary" type="submit" href="@routes.TeamManagement.editteam(team.id)">Edit</a>
+						</td>
+						<td class='text-overflow' style='max-width:100px; width: 5px'>
 							<form action="@routes.TeamManagement.deleteTeam(team.id)" method="post">
-								<a class="btn btn-primary" type="submit" href="@routes.TeamManagement.editteam(team.id)">Edit</a>
 								<input class="btn btn-danger" type="submit" value="Delete">
 							</form>
 						</td>
@@ -39,21 +42,41 @@
 				<tr class="centert" style="font-weight: bold;border-bottom: 1px solid #cef; white-space: nowrap">
 					<th class='text-overflow' style="max-width:200px; width: 50px; vertical-align: middle;">Criteria<br/></th>
 					<th class='text-overflow' style="max-width:100px; width: 5px; vertical-align: middle;">Edit<br/></th>
+					<th class='text-overflow' style="max-width:100px; width: 5px; vertical-align: middle;">Delete<br/></th>
 				</tr>
-				@teams.map { team =>
+				@criterias.map { criteria =>
 					<tr style='white-space: nowrap'>
-						<td class='text-overflow' style='max-width:200px; width: 50px'>@team.teamname</td>
+						<td class='text-overflow' style='max-width:200px; width: 50px'>@criteria.criName</td>
 						<td class='text-overflow' style='max-width:100px; width: 5px'>
-							<form action="@routes.TeamManagement.deleteTeam(team.id)" method="post">
-								<input class="btn btn-danger" type="submit" value="Delete">
+							
+							<a class="btn btn-primary" data-toggle="collapse" href="#editCriteria@criteria.id" aria-expanded="false" aria-controls="collapseExample">
+								Edit
+							</a>
+							<div class="collapse" id="editCriteria@criteria.id">
+							  <div class="well">
+							  	<form action="@routes.TeamManagement.updateCriteria(criteria.id)" method="post">
+							  		<input type="text" id="@criteria.id" name="criName" placeholder="Criteria name" value="@criteria.criName">
+							    	<button class="btn btn-success" type="submit">Apply</button>
+							    </form>
+							  </div>
+							</div>
+							
+
+							
+						</td>
+						<td class='text-overflow' style='max-width:100px; width: 5px'>
+							<form action="@routes.TeamManagement.deleteCriteria(criteria.id)" method="post">
+								<input class="btn btn-danger" type="submit"value="Delete">
 							</form>
 						</td>
 					</tr>
 				}
 			</thead>
 		</table>
-   		<a class="btn btn-primary" type="submit" href="@routes.TeamManagement.addteam">New Criteria</a>
-	
+		<form action="@routes.TeamManagement.recordCriteria" method="post">
+			<input type="text" id="criterianame" name="criName" placeholder="Criteria name">
+   			<button class="btn btn-success" type="submit">Add Criteria</button>
+		</form>
 	
 	
 	</div>

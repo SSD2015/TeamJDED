@@ -25,8 +25,14 @@ GET		/summaryscore				controllers.Summary.index
 #Admin page
 
 GET 	/admin						controllers.TeamManagement.index
+#Team
 GET		/admin/addteam				controllers.TeamManagement.addteam
 POST	/admin/addteam				controllers.TeamManagement.recordTeam
 GET		/admin/editteam				controllers.TeamManagement.editteam(id:Long)
 POST	/admin/editteam				controllers.TeamManagement.updateTeam(id:Long)
 POST	/admin/deleteteam/:id		controllers.TeamManagement.deleteTeam(id:Long)
+
+#Criteria
+POST	/admin/addCriteria				controllers.TeamManagement.recordCriteria
+POST	/admin/editcriteria				controllers.TeamManagement.updateCriteria(id:Long)
+POST	/admin/deletecriteria/:id		controllers.TeamManagement.deleteCriteria(id:Long)
