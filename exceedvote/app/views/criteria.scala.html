@@ -1,4 +1,4 @@
-@(isLoggedIn: Boolean, userInfo: UserModel,isAdmin : Boolean,criterias :List[CriteriaModel])
+@(isLoggedIn: Boolean, userInfo: UserModel,isAdmin : Boolean,criterias :List[CriteriaModel],voteUser:List[VoteModel])
 
 
 @main("Vote Page || ExceedVote by JDED",isLoggedIn, userInfo,isAdmin) {
@@ -8,15 +8,33 @@
 		
 	</div>
 	<div class="container">
-		@criterias.map { criteria =>
-			<a href="@routes.Vote.vote(criteria.id)">
-				@criteria.criName
-			</a>
+	<table class="table table-striped">
+		<thead>
+	      <tr>
+	        <th>Criteria</th>
+	      	<th>Your Vote</th>
+	      </tr>
+	    </thead>
+	    <tbody>
+			@criterias.map { criteria =>
+				<tr>
+					<td>
+						<a href="@routes.Vote.vote(criteria.id)">
+							@criteria.criName
+						</a>
+					</td>
+					<td>
+						@for(x <- voteUser){
+							@if( x.criteria.id==criteria.id){
+							 	@x.team.teamname									
+							}
+						}	
+					</td>
+				</tr>
 			
-			<br>
-		
-		}
-			
+			}
+		</tbody>
+	</table>		
 
 			
 	</div>

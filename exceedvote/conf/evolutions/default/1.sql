@@ -9,9 +9,16 @@ create table criteria_model (
   constraint pk_criteria_model primary key (id))
 ;
 
+create table criteria_rate_model (
+  id                        bigint auto_increment not null,
+  cri_name                  varchar(255),
+  constraint pk_criteria_rate_model primary key (id))
+;
+
 create table rate_model (
   id                        bigint auto_increment not null,
   user_id                   bigint,
+  criteria_id               bigint,
   team_id                   bigint,
   rate                      integer,
   constraint pk_rate_model primary key (id))
@@ -44,14 +51,16 @@ create table vote_model (
 
 alter table rate_model add constraint fk_rate_model_user_1 foreign key (user_id) references user_model (id) on delete restrict on update restrict;
 create index ix_rate_model_user_1 on rate_model (user_id);
-alter table rate_model add constraint fk_rate_model_team_2 foreign key (team_id) references team_model (id) on delete restrict on update restrict;
-create index ix_rate_model_team_2 on rate_model (team_id);
-alter table vote_model add constraint fk_vote_model_user_3 foreign key (user_id) references user_model (id) on delete restrict on update restrict;
-create index ix_vote_model_user_3 on vote_model (user_id);
-alter table vote_model add constraint fk_vote_model_criteria_4 foreign key (criteria_id) references criteria_model (id) on delete restrict on update restrict;
-create index ix_vote_model_criteria_4 on vote_model (criteria_id);
-alter table vote_model add constraint fk_vote_model_team_5 foreign key (team_id) references team_model (id) on delete restrict on update restrict;
-create index ix_vote_model_team_5 on vote_model (team_id);
+alter table rate_model add constraint fk_rate_model_criteria_2 foreign key (criteria_id) references criteria_rate_model (id) on delete restrict on update restrict;
+create index ix_rate_model_criteria_2 on rate_model (criteria_id);
+alter table rate_model add constraint fk_rate_model_team_3 foreign key (team_id) references team_model (id) on delete restrict on update restrict;
+create index ix_rate_model_team_3 on rate_model (team_id);
+alter table vote_model add constraint fk_vote_model_user_4 foreign key (user_id) references user_model (id) on delete restrict on update restrict;
+create index ix_vote_model_user_4 on vote_model (user_id);
+alter table vote_model add constraint fk_vote_model_criteria_5 foreign key (criteria_id) references criteria_model (id) on delete restrict on update restrict;
+create index ix_vote_model_criteria_5 on vote_model (criteria_id);
+alter table vote_model add constraint fk_vote_model_team_6 foreign key (team_id) references team_model (id) on delete restrict on update restrict;
+create index ix_vote_model_team_6 on vote_model (team_id);
 
 
 
@@ -60,6 +69,8 @@ create index ix_vote_model_team_5 on vote_model (team_id);
 SET FOREIGN_KEY_CHECKS=0;
 
 drop table criteria_model;
+
+drop table criteria_rate_model;
 
 drop table rate_model;
 

@@ -17,9 +17,9 @@ public class Vote extends Controller{
 	
 	@Security.Authenticated(Secured.class)
 	public static Result index(){
-		
+		UserModel localUser = Secured.getUserInfo(ctx());
 		return ok(criteria.render(Secured.isLoggedIn(ctx()), Secured.getUserInfo(ctx()),Secured.isAdmin(ctx())
-				,CriteriaModel.find.all( )));
+				,CriteriaModel.find.all( ),VoteModel.getUser(localUser)));
 	}
 	
 	@Security.Authenticated(Secured.class)

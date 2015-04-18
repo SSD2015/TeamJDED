@@ -12,13 +12,14 @@ POST	/login						controllers.Application.postLogin
 GET		/logout						controllers.Application.logout												
 
 #Vote page
-GET		/criteria					controllers.Vote.index
+GET		/vote/criteria				controllers.Vote.index
 GET		/vote						controllers.Vote.vote(criteriaid:Long)
 POST    /vote/submit      			controllers.Vote.voteItem(userid:Long,criteriaid:Long,teamid:Long)
 
 #Rate
-GET		/rate						controllers.Rate.index
-POST	/rate/submit				controllers.Rate.submit(userid:Long,teamid:Long)
+GET		/rate/criteria				controllers.Rate.index
+GET		/rate						controllers.Rate.rate(criteriaid:Long)
+POST	/rate/submit				controllers.Rate.submit(userid:Long,criteriaid:Long,teamid:Long)
 
 #Summary page
 GET		/summaryscore				controllers.Summary.index
@@ -38,3 +39,8 @@ POST	/admin/deleteteam/:id		controllers.TeamManagement.deleteTeam(id:Long)
 POST	/admin/addCriteria				controllers.TeamManagement.recordCriteria
 POST	/admin/editcriteria				controllers.TeamManagement.updateCriteria(id:Long)
 POST	/admin/deletecriteria/:id		controllers.TeamManagement.deleteCriteria(id:Long)
+
+#Criteria
+POST	/admin/addCriteria/rate				controllers.TeamManagement.recordRateCriteria
+POST	/admin/editcriteria/rate			controllers.TeamManagement.updateRateCriteria(id:Long)
+POST	/admin/deletecriteria/:id/rate		controllers.TeamManagement.deleteRateCriteria(id:Long)

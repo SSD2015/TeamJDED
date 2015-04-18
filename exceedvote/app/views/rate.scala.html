@@ -1,10 +1,10 @@
-@(isLoggedIn: Boolean, userInfo: UserModel,isAdmin : Boolean,teams : List[TeamModel],rateUser:List[RateModel])
+@(isLoggedIn: Boolean, userInfo: UserModel,isAdmin : Boolean,teams : List[TeamModel],criteria:CriteriaRateModel,rateUser:List[RateModel])
 
 
 @main("Rate Page || ExceedVote by JDED",isLoggedIn, userInfo,isAdmin) {
 	
 	<div class="jumbotron text-center">
-		<h2>Ratings</h2>
+		<h2>Ratings for @criteria.criName</h2>
 		
 	</div>
 	<div class="container">
@@ -18,7 +18,7 @@
 					</tr>
 					@teams.map { team =>
 						
-						<form action="@routes.Rate.submit(userInfo.id,team.id)" method="post" onsubmit="return alert('Thank you');">
+						<form action="@routes.Rate.submit(userInfo.id,criteria.id,team.id)" method="post" onsubmit="return alert('Thank you');">
 							
 								<tr style='white-space: nowrap'>
 									<td class='text-overflow' style='max-width:250px; width: 50px'>
@@ -35,7 +35,7 @@
 									<td class='text-overflow' style='max-width:30px; width: 5px'>
 										<input type="hidden" class="rating-tooltip" name="rate" 
 											@for(x <- rateUser){
-												@if(x.team.id==team.id){
+												@if(x.criteria.id == criteria.id && x.team.id == team.id){
 												value="@x.rate"
 												}
 											}/>												
@@ -48,8 +48,11 @@
 					}
 				</thead>
 			</table>
-    		
-		
+			<div align="right">
+    		<a class="btn btn-success" href="@routes.Rate.index">
+				Next Criteria
+			</a>
+			</div>
 	</div>
 		<script>
       $(function () {

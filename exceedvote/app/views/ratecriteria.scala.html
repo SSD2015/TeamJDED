@@ -1,0 +1,40 @@
+@(isLoggedIn: Boolean, userInfo: UserModel,isAdmin : Boolean,criterias :List[CriteriaRateModel],isSuccess :List[Boolean])
+
+
+@main("Rate Page || ExceedVote by JDED",isLoggedIn, userInfo,isAdmin) {
+	
+	<div class="jumbotron text-center">
+		<h2>Rate</h2>
+		
+	</div>
+	<div class="container">
+	<table class="table table-striped">
+		<thead>
+	      <tr>
+	        <th>Criteria</th>
+	      	<th>Status</th>
+	      </tr>
+	    </thead>
+	    <tbody>
+	  		@for((criteria,i) <- criterias.zipWithIndex){
+	  			<tr>
+					<td>
+						<a href="@routes.Rate.rate(criteria.id)">
+							@criteria.criName
+						</a>
+					</td>
+					<td>
+						@if(isSuccess(i)==true){Success
+						}
+					</td>
+				</tr>
+	  		}
+			
+		</tbody>
+	</table>		
+			
+	</div>
+		
+
+
+}

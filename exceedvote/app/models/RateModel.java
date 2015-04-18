@@ -18,6 +18,9 @@ public class RateModel extends Model {
 	public UserModel user;
 	
 	@ManyToOne
+	public CriteriaRateModel criteria;
+	
+	@ManyToOne
 	public TeamModel team;	
 	
 	public int	rate;
@@ -34,4 +37,22 @@ public class RateModel extends Model {
         
         return options;
     }
+	
+	public static ArrayList<Boolean> isSuccess(UserModel localUser){
+		ArrayList<Boolean> result = new ArrayList<Boolean>();
+		int numCri = CriteriaRateModel.find.findRowCount();
+		int numTeam = TeamModel.find.findRowCount();
+		for(int i = 1;i <= numCri;i++){
+			
+			int sum = RateModel.find.where().eq("user_id", localUser.id+"").eq("criteria_id", i+"")
+					.findRowCount(); 
+	        	
+			if(sum == numTeam) 
+	        		result.add(true);
+	        	else result.add(false);
+	    	
+		}
+
+		return result;
+	}
 }

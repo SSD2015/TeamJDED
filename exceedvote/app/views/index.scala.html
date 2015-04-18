@@ -9,8 +9,14 @@
 		        <input type="user" id="username" name="username" class="form-control" placeholder="Username" required autofocus>
 		        <label for="inputPassword" class="sr-only">Password</label>
 		        <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
-		        <div class="checkbox">
+		        <b>Example</b><br>
+		        <div id="error-message" class="text-danger">
+		        Username : 56xxxxxxxx<br>
+		        Password : supakorn.k
 		        </div>
+		        <b>Username</b> is your ID number <br>
+		        <b>Password</b> is "name"."first lastname" <br>
+		        
 		        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
 			 @if(flash.containsKey("error")) {
 	           <div id="error-message" class="text-danger">

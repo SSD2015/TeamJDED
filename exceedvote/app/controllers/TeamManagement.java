@@ -1,7 +1,11 @@
 package controllers;
 
 import static play.data.Form.form;
+
+import javax.persistence.PersistenceException;
+
 import models.CriteriaModel;
+import models.CriteriaRateModel;
 import models.TeamModel;
 import play.mvc.Controller;
 import play.mvc.Result;
@@ -15,7 +19,7 @@ public class TeamManagement extends Controller{
 	@Security.Authenticated(Secured.class)
 	public static Result index(){
 		return ok(management.render(Secured.isLoggedIn(ctx()), Secured.getUserInfo(ctx()),Secured.isAdmin(ctx())
-				,TeamModel.find.all(),CriteriaModel.find.all()));
+				,TeamModel.find.all(),CriteriaModel.find.all(),CriteriaRateModel.find.all()));
 	}
 	
 	@Security.Authenticated(Secured.class)
@@ -55,9 +59,12 @@ public class TeamManagement extends Controller{
 	}
 	
 	public static Result deleteTeam(Long id){
-		TeamModel.find.ref(id).delete();
-		
-		return index();
+		try{
+			TeamModel.find.ref(id).delete();
+			return index();
+		}catch( PersistenceException err){
+			return index();
+		}
 	}
 	
 	
@@ -82,8 +89,40 @@ public class TeamManagement extends Controller{
 	}
 	
 	public static Result deleteCriteria(Long id){
-		CriteriaModel.find.ref(id).delete();
+		try{
+			CriteriaModel.find.ref(id).delete();
+			return index();
+		}catch( PersistenceException err){
+			return index();
+		}
+	}
+	
+	public static Result recordRateCriteria(){
+		CriteriaRateModel criteria = Form.form(CriteriaRateModel.class).bindFromRequest().get();
+		
+		criteria.save();
 		
 		return index();
+	}
+	
+	public static Result updateRateCriteria(Long id ){
+		Form<CriteriaRateModel> criForm = form(CriteriaRateModel.class).bindFromRequest();
+        if(criForm.hasErrors()) {
+            return index();
+        }
+        criForm.get().update(id);
+        
+        //flash("success", "Team " + teamForm.get().name + " has been updated");
+		
+		return index();
+	}
+	
+	public static Result deleteRateCriteria(Long id){
+		try{
+			CriteriaRateModel.find.ref(id).delete();
+			return index();
+		}catch( PersistenceException err){
+			return index();
+		}
 	}
 }
