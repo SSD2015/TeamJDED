@@ -1,4 +1,4 @@
-@(votes: Map[String,Integer],isLoggedIn: Boolean, userInfo: UserModel,isAdmin : Boolean)
+@(votes: Map[String,Array[String]],isLoggedIn: Boolean, userInfo: UserModel,isAdmin : Boolean)
 
 @main("Summary Page || ExceedVote by JDED",isLoggedIn, userInfo,isAdmin) {
 	
@@ -8,7 +8,10 @@
 	<div class="container">
 		<div id="ex0"></div>
 		@for((key, value) <- votes){
-		  @key - @value <br>
+		  <div id="@key">
+		   Criteria @value(0) - Team @value(1) - Score = @value(2)
+		  </div>
+		  <br>
 		}
 	</div>
 
@@ -22,7 +25,7 @@
 	             
 			          ['Team','Score'],
 			        @for((key, value) <- votes){
-			    		  [	'@key', @value],
+			    		  [	'@key', @value(2)],
 					}
         			]);
 		

@@ -14,6 +14,6 @@ public class Summary extends Controller {
 	@Security.Authenticated(Secured.class)
 	public static Result index(){
 		//return ok(summaryscore.render(VoteModel.options(),Secured.isLoggedIn(ctx()), Secured.getUserInfo(ctx()),Secured.isAdmin(ctx())));
-		return ok(index.render(Secured.isLoggedIn(ctx()), Secured.getUserInfo(ctx()),Secured.isAdmin(ctx())));
+		return ok(summaryscore.render(VoteModel.getSummary(),Secured.isLoggedIn(ctx()), Secured.getUserInfo(ctx()),Secured.isAdmin(ctx())));
 	}
 }

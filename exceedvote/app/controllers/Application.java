@@ -23,22 +23,36 @@ public class Application extends Controller {
 	public static Result postLogin() throws NoSuchAlgorithmException{
 	    // Get the submitted form data from the request object, and run validation.
 	    UserModel formData = Form.form(UserModel.class).bindFromRequest().get();
+
+	    
+	 // Hash a password for the first time
+	//    String hashed = BCrypt.hashpw(password, BCrypt.gensalt());
+
+	    // gensalt's log_rounds parameter determines the complexity
+	    // the work factor is 2**log_rounds, and the default is 10
+	   // String hashed = BCrypt.hashpw("supayut.r", BCrypt.gensalt(12));
+
+	    // Check that an unencrypted password matches one that has
+	    // previously been hashed
+	   
+	    
 	    if(UserModel.getUser(formData.username) == null){
 	    	flash("error", "Invalid Username or Password");
 	    	return badRequest(index.render(Secured.isLoggedIn(ctx()), Secured.getUserInfo(ctx()),Secured.isAdmin(ctx())));
 	  	    
-	    }
-	    else{
-	    	UserModel currUser = UserModel.getUser(formData.username);
-	    	if(!currUser.password.equals(encodePass(formData.password))){
-	    		flash("error", "Invalid Username or Password");
-	    		return badRequest(index.render(Secured.isLoggedIn(ctx()), Secured.getUserInfo(ctx()),Secured.isAdmin(ctx())));
-	    	}
-	    	else{
-	    		session().clear();
-	  	      	session("username", formData.username);
-	  	      	return redirect(routes.Vote.index());
-	    	}
+	    }else{
+		    UserModel currUser = UserModel.getUser(formData.username);
+		    if (BCrypt.checkpw(formData.password, currUser.password)){
+		    	//System.out.println("It matches");
+		    	session().clear();
+		      	session("username", formData.username);
+		    	return redirect(routes.Vote.index());
+		    }
+		    else{
+		    	//System.out.println("It does not match");
+		    	flash("error", "Invalid Username or Password");
+		    	return badRequest(index.render(Secured.isLoggedIn(ctx()), Secured.getUserInfo(ctx()),Secured.isAdmin(ctx())));
+		    }
 	    }
 	}
     
@@ -49,15 +63,5 @@ public class Application extends Controller {
 		return redirect(routes.Application.index());
 	}
     
-    private static String encodePass(String password) throws NoSuchAlgorithmException{
-		MessageDigest md = MessageDigest.getInstance("MD5");
-		md.update(password.getBytes());
-		byte[] digest = md.digest();
-		StringBuffer sb = new StringBuffer();
-		for (byte b : digest) {
-			sb.append(String.format("%02x", b & 0xff));
-		}
-		return sb.toString();
-	}
 
 }
