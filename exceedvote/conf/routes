@@ -44,3 +44,7 @@ POST	/admin/deletecriteria/:id		controllers.TeamManagement.deleteCriteria(id:Lon
 POST	/admin/addCriteria/rate				controllers.TeamManagement.recordRateCriteria
 POST	/admin/editcriteria/rate			controllers.TeamManagement.updateRateCriteria(id:Long)
 POST	/admin/deletecriteria/:id/rate		controllers.TeamManagement.deleteRateCriteria(id:Long)
+
+#authenticator
+GET    /login                     controllers.Application.login()
+POST   /authenticate              controllers.Application.authenticate()
