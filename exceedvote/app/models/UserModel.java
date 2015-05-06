@@ -28,4 +28,5 @@ public class UserModel extends Model{
 		return find.where().eq("username", username).findUnique();
 	}
 
+	
 }
