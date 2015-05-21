@@ -13,7 +13,7 @@
 				<thead>
 					<tr class="centert" style="font-weight: bold;border-bottom: 1px solid #cef; white-space: nowrap">
 						<th class='text-overflow' style="max-width:250px; width: 50px; vertical-align: middle;">Project<br/></th>
-						<th class='text-overflow' style="max-width:30px; width: 5px; vertical-align: middle;">Rate<br/></th>
+						<th class='text-overflow' style="max-width:50px; width: 10px; vertical-align: middle;">Rate<br/></th>
 						<th class='text-overflow' style="max-width:30px; width: 5px; vertical-align: middle;">Save<br/></th>
 					</tr>
 					@teams.map { team =>
@@ -32,7 +32,7 @@
 										  </div>
 										</div>
 									</td>
-									<td class='text-overflow' style='max-width:30px; width: 5px'>
+									<td class='text-overflow' style='max-width:50px; width: 1px'>
 										<input type="hidden" class="rating-tooltip" name="rate" 
 											@for(x <- rateUser){
 												@if(x.criteria.id == criteria.id && x.team.id == team.id){
